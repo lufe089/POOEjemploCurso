@@ -4,28 +4,19 @@
 
 #ifndef CURSO_H
 #define CURSO_H
+#include "Salon.h"
 
-#include <string>
-#include "Salon.h" // Para relacionar Curso con Salon
 
 class Curso {
 private:
     std::string nombreCurso;
     int codigo;
-    Salon salonAsignado;
-
+    Salon salon;
 public:
-    Curso() = default;
+    Curso () = default;
     Curso(std::string nombreCurso, int codigo);
-
-    std::string getNombreCurso();
-    int getCodigo();
-
-    void setNombreCurso(std::string nombreCurso);
-    void setCodigo(int codigo);
-
     void asignarSalon(Salon salon);
-    Salon getSalonAsignado();
+    void mostrarInfo();
 };
 
 

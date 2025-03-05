@@ -1,44 +1,38 @@
 #include <iostream>
-
-#include "src/Curso.h"
 #include "src/Salon.h"
+#include "src/Curso.h"
 #include "src/Profesor.h"
+
+void iniciarInfo() {
+    // Crear dos objetos salones
+    Salon almendro3_4("Almendros3.4", 30);
+    Salon palmas3_1("Palmas3.1", 30);
+
+    Salon salonSinNombre('h');
+
+    std::cout << "Imprimo info de los salones \n";
+    // Invoco los metodos
+    //almendro3_4.mostrarInfo();
+
+    // Muestro info del salon sin nombre
+    //salonSinNombre.mostrarInfo();
+
+    std::cout << "Creo cursos \n";
+    Curso poo("Programacion Orientada a objetos", 12);
+    poo.asignarSalon(almendro3_4);
+    //poo.mostrarInfo();
+
+    Profesor luisaRincon("Luisa Rincon", "1545455");
+    luisaRincon.agregarCurso(poo);
+    luisaRincon.mostrarCursos();
+
+
+}
 
 
 int main() {
-    // 1. Creamos un objeto Salon
-    Salon salon101("Salon 101", 30);
-
-    // 2. Creamos un Curso y lo asignamos al salon anterior
-    Curso poo("Programación Orientada a Objetos", 1001);
-    poo.asignarSalon(salon101);
-
-    // 3. Creamos un Profesor y le agregamos el curso
-    Profesor profJuan("Juan Perez", "P001");
-    profJuan.agregarCurso(poo);
-
-    // 4. Creamos otro Salón, otro Curso y otro Profesor
-    Salon salon202("Salon 202", 50);
-    Curso algebra("Algebra Lineal", 2002);
-    algebra.asignarSalon(salon202);
-
-    Profesor profMaria("Maria Lopez", "P002");
-    profMaria.agregarCurso(algebra);
-
-    // Mostramos información por consola
-    std::cout << "Profesor: " << profJuan.getNombre()
-              << " dicta el curso: "
-              << profJuan.getCursos()[0].getNombreCurso()
-              << " en el salon: "
-              << profJuan.getCursos()[0].getSalonAsignado().getNombreSalon()
-              << std::endl;
-
-    std::cout << "Otro profesor: " << profMaria.getNombre()
-              << " dicta el curso: "
-              << profMaria.getCursos()[0].getNombreCurso()
-              << " en el salon: "
-              << profMaria.getCursos()[0].getSalonAsignado().getNombreSalon()
-              << std::endl;
+    std::cout << "Hello, World!" << std::endl;
+    iniciarInfo();
 
     return 0;
 }

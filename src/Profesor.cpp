@@ -4,34 +4,24 @@
 
 #include "Profesor.h"
 
-// Definición del constructor
-Profesor::Profesor(std::string nombre, std::string id)
-{
-    Profesor::nombre = nombre;
-    Profesor::id = id;
-}
+#include <iostream>
+#include <ostream>
 
-// Definición de métodos
-std::string Profesor::getNombre() {
-    return nombre;
-}
-
-std::string Profesor::getId() {
-    return id;
-}
-
-void Profesor::setNombre(std::string nombre) {
+Profesor::Profesor(std::string nombre, std::string id) {
     this->nombre = nombre;
-}
-
-void Profesor::setId(std::string id) {
     this->id = id;
 }
 
 void Profesor::agregarCurso(Curso curso) {
-    cursos.push_back(curso);
+    //FIXME: Verificar que no exista previamente
+    this->cursos.push_back(curso);
 }
 
-std::vector<Curso> Profesor::getCursos() {
-    return cursos;
+void Profesor::mostrarCursos() {
+    std::cout << "La profesora " << this->nombre << "Tiene estos cursos: " << std::endl;
+
+    for (int i = 0; i < this->cursos.size(); i++) {
+        Curso cursoMostrar = this->cursos[i];
+        cursoMostrar.mostrarInfo();
+    }
 }

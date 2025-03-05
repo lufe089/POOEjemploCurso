@@ -8,18 +8,15 @@
 #include <string>
 
 class Salon {
-    private:
+private:
     std::string nombreSalon;
     int capacidad;
-    public:
+public:
     Salon() = default;
-    Salon(std::string nombreSalon, int capacidad);
-
-    std::string getNombreSalon();
-    int getCapacidad();
-
-    void setNombreSalon(std::string nombreSalon);
-    void setCapacidad(int capacidad);
+    Salon(std::string nombreSalon, int capacidad); // Constructor con parametros
+    Salon(std::string nombreSalon);
+    Salon(int capacidad);
+    void mostrarInfo();
 };
 
 

@@ -2,25 +2,32 @@
 // Created by zalon on 5/03/2025.
 //
 
-# include "Salon.h"
+#include "Salon.h"
+#include <iostream>
 
-Salon::Salon(std::string nombreSalon, int capacidad){
+/***
+ * Inicializa la clase
+ */
+Salon::Salon(std::string nombreSalon, int capacidad) {
+
     Salon::nombreSalon = nombreSalon;
     Salon::capacidad = capacidad;
+    // std::cout << "Entre al constructor con todos los parámetros \n";
 }
 
-std::string Salon::getNombreSalon() {
-    return nombreSalon;
+Salon::Salon(int capacidad) {
+    Salon::capacidad = capacidad;
+    Salon::nombreSalon = "Sin nombre";
+    //std::cout << "Constructor solo con capacidad \n";
 }
 
-int Salon::getCapacidad() {
-    return capacidad;
+Salon::Salon(std::string nombreSalon) {
+    Salon::nombreSalon = nombreSalon;
+    //std::cout << " Solo tengo la el nombre \n";
 }
 
-void Salon::setNombreSalon(std::string nombreSalon) {
-    this->nombreSalon = nombreSalon;
-}
-
-void Salon::setCapacidad(int capacidad) {
-    this->capacidad = capacidad;
+void Salon::mostrarInfo() {
+    std::cout << "Los datos del salon son: \n";
+    std::cout << "Nombre Salon: " << nombreSalon << std::endl;
+    std::cout << "Capacidad: " << capacidad << std::endl;
 }

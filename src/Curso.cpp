@@ -4,31 +4,23 @@
 
 #include "Curso.h"
 
+#include <iostream>
+#include <ostream>
+
 Curso::Curso(std::string nombreCurso, int codigo){
     Curso::nombreCurso = nombreCurso;
-    Curso::codigo = codigo;
-}
-
-std::string Curso::getNombreCurso() {
-    return nombreCurso;
-}
-
-int Curso::getCodigo() {
-    return codigo;
-}
-
-void Curso::setNombreCurso(std::string nombreCurso) {
-    this->nombreCurso = nombreCurso;
-}
-
-void Curso::setCodigo(int codigo) {
     this->codigo = codigo;
 }
 
 void Curso::asignarSalon(Salon salon) {
-    salonAsignado = salon;
+    this->salon = salon;
+    // Dos formas de hacer lo mismo Curso::salon = salon;
+
 }
 
-Salon Curso::getSalonAsignado() {
-    return salonAsignado;
+void Curso::mostrarInfo() {
+    std::cout << this->nombreCurso << " cod: " << this->codigo << std::endl;
+    std::cout << "Esta es la informacion del salon: \n";
+    this->salon.mostrarInfo();
+
 }
