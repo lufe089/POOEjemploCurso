@@ -13,12 +13,12 @@ class Profesor {
 private:
     std::string nombre;
     std::string id;
-    std::vector<Curso> cursos;
+    std::vector<Curso*> cursos;
 
 public:
     Profesor() = default;
     Profesor(std::string nombre, std::string id);
-    void agregarCurso(Curso curso);
+    void agregarCurso(Curso * curso);
     void mostrarCursos();
 };
 
