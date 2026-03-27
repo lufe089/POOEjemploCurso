@@ -9,7 +9,7 @@ classDiagram
     class Profesor {
         -string nombre
         -string id
-        -Vector cursos
+        -Vector * cursos
         +Profesor(string nombre, string id)
         +void agregarCurso(Curso curso)
     }
@@ -17,9 +17,9 @@ classDiagram
     class Curso {
         -string nombreCurso
         -int codigo
-        -Salon salon
+        -Salon * salon
         +Curso(string nombreCurso, int codigo)
-        +void asignarSalon(Salon s)
+        +void asignarSalon(Salon * s)
     }
 
     class Salon {
