@@ -5,27 +5,31 @@
 
 void iniciarInfo() {
     // Crear dos objetos salones
-    Salon almendro3_4("Almendros3.4", 30);
-    Salon palmas3_1("Palmas3.1", 30);
+    Salon * almendro3_4 = new Salon("Almendros3.4", 30);
+    Salon * palmas3_1 = new Salon("Palmas3.1", 30);
 
-    Salon salonSinNombre('h');
+    Salon * salonSinNombre = new Salon('h');
 
     std::cout << "Imprimo info de los salones \n";
     // Invoco los metodos
-    //almendro3_4.mostrarInfo();
+    //almendro3_4->mostrarInfo();
 
     // Muestro info del salon sin nombre
-    //salonSinNombre.mostrarInfo();
+    //salonSinNombre->mostrarInfo();
 
     std::cout << "Creo cursos \n";
-    Curso poo("Programacion Orientada a objetos", 12);
-    poo.asignarSalon(almendro3_4);
-    //poo.mostrarInfo();
+    Curso * poo = new Curso("Programacion Orientada a objetos", 12);
+    poo->asignarSalon(almendro3_4);
+    poo->mostrarInfo();
 
-    Profesor luisaRincon("Luisa Rincon", "1545455");
-    luisaRincon.agregarCurso(poo);
-    luisaRincon.mostrarCursos();
+    Profesor * luisaRincon = new Profesor("Luisa Rincon", "1545455");
+    luisaRincon->agregarCurso(poo);
+    luisaRincon->mostrarCursos();
 
+    delete luisaRincon;
+    delete poo;
+    delete salonSinNombre;
+    delete palmas3_1;
 
 }
 
