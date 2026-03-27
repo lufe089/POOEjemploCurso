@@ -12,7 +12,7 @@ Profesor::Profesor(std::string nombre, std::string id) {
     this->id = id;
 }
 
-void Profesor::agregarCurso(Curso curso) {
+void Profesor::agregarCurso(Curso * curso) {
     //FIXME: Verificar que no exista previamente
     this->cursos.push_back(curso);
 }
@@ -20,8 +20,8 @@ void Profesor::agregarCurso(Curso curso) {
 void Profesor::mostrarCursos() {
     std::cout << "La profesora " << this->nombre << "Tiene estos cursos: " << std::endl;
 
-    for (int i = 0; i < this->cursos.size(); i++) {
-        Curso cursoMostrar = this->cursos[i];
-        cursoMostrar.mostrarInfo();
+    for (int i = 0; i < this->cursos->size(); i++) {
+        Curso * cursoMostrar = this->cursos[i];
+        cursoMostrar->mostrarInfo();
     }
 }
