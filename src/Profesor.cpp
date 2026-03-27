@@ -14,7 +14,7 @@ Profesor::Profesor(std::string nombre, std::string id) {
 
 void Profesor::agregarCurso(Curso * curso) {
     //FIXME: Verificar que no exista previamente
-    this->cursos.push_back(curso);
+    this->cursos->push_back(curso);
 }
 
 void Profesor::mostrarCursos() {
