@@ -18,7 +18,7 @@ Salon::Salon(int capacidad) {
 }
 
 Salon::Salon(std::string nombreSalon) {
-    this-nombreSalon = nombreSalon;
+    this->nombreSalon = nombreSalon;
     std::cout << " Solo tengo el nombre \n";
 }
 
