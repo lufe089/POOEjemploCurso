@@ -11,7 +11,7 @@ classDiagram
         -string id
         -Vector * cursos
         +Profesor(string nombre, string id)
-        +void agregarCurso(Curso curso)
+        +void agregarCurso(Curso * curso)
     }
 
     class Curso {
